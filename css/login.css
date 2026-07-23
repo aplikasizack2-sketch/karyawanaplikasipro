@@ -259,6 +259,7 @@
 .toggle-password {
     position: absolute;
     right: var(--spacing);
+   left: auto !important;
     color: var(--text-muted);
     background: none;
     border: none;
