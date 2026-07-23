@@ -232,16 +232,26 @@
     align-items: center;
 }
 
-.input-wrapper i {
+/* 1. PERBAIKAN UTAMA: Tambahkan tanda '>' agar HANYA kena ke ikon gembok di sebelah kiri */
+.input-wrapper > i {
     position: absolute;
     left: var(--spacing);
     color: var(--text-muted);
     font-size: var(--font-size);
+    z-index: 1;
+    pointer-events: none;
 }
 
+/* 2. Tambahkan ini untuk meriset/menetralkan ikon mata di dalam tombol */
+.toggle-password i {
+    position: static !important;
+    left: auto !important;
+}
+
+/* 3. Atur padding kanan input (45px) agar teks password tidak membentur ikon mata */
 .input-wrapper input {
     width: 100%;
-    padding: var(--spacing) var(--spacing) var(--spacing) 45px;
+    padding: var(--spacing) 45px var(--spacing) 45px; 
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     background: var(--color-white) !important;
@@ -256,18 +266,18 @@
     box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
 }
 
+/* 4. Posisi tombol mata di dalam input sebelah kanan */
 .toggle-password {
     position: absolute;
-    position: absolute;
     right: var(--spacing);
-    left: auto !important;         /* FIX: Memaksa lepas dari posisi kiri jika bentrok */
-    top: 50%;                     /* Menjaga tepat di tengah vertikal */
-    transform: translateY(-50%);  /* Presisi tengah secara vertikal */
+    left: auto !important;
+    top: 50%;
+    transform: translateY(-50%);
     
-    display: flex;                /* Merapikan posisi ikon di dalam tombol */
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2;                   /* Menjaga tombol di atas layer input */
+    z-index: 2;
 
     color: var(--text-muted);
     background: none;
@@ -279,6 +289,7 @@
 
 .toggle-password:hover {
     color: var(--text-primary);
+}
 }
 
 /* Role Selector */
