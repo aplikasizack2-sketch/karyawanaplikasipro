@@ -258,8 +258,17 @@
 
 .toggle-password {
     position: absolute;
+    position: absolute;
     right: var(--spacing);
-   left: auto !important;
+    left: auto !important;         /* FIX: Memaksa lepas dari posisi kiri jika bentrok */
+    top: 50%;                     /* Menjaga tepat di tengah vertikal */
+    transform: translateY(-50%);  /* Presisi tengah secara vertikal */
+    
+    display: flex;                /* Merapikan posisi ikon di dalam tombol */
+    align-items: center;
+    justify-content: center;
+    z-index: 2;                   /* Menjaga tombol di atas layer input */
+
     color: var(--text-muted);
     background: none;
     border: none;
