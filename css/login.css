@@ -241,7 +241,7 @@
 
 .input-wrapper input {
     width: 100%;
-    padding: var(--spacing) var(--spacing) var(--spacing) 45px;
+    padding: var(--spacing) 45px var(--spacing) var(--spacing) 45px;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     background: var(--color-white) !important;
